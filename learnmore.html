@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About MoodMate</title>
+    <link rel="stylesheet" href="styleslearn.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="particle-container">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="logo.svg" alt="MoodMate Logo">
+                <span>MoodMate</span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="index2.html">Dashboard</a>
+                <a href="minigames.html">Games</a>
+                <a href="quotes.html">Quotes</a>
+                <a href="addskills.html">Skills</a>
+            </div>
+            <div class="theme-toggle">
+                <i class="fas fa-moon" id="theme-icon"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Welcome to <span class="highlight">MoodMate</span></h1>
+            <p class="subtitle">Your companion for better mental well-being</p>
+        </section>
+
+        <section class="about-container">
+            <div class="about-card">
+                <h2>Our Mission</h2>
+                <p><span class="highlight">MoodMate</span> is a platform dedicated to enhancing the <span class="highlight">mental well-being</span> of college students through technology and compassion.</p>
+                <p>Feeling <span class="highlight">lonely or stressed?</span> We've got you covered with tools designed to help you manage your emotions and find moments of joy in your day.</p>
+            </div>
+
+            <div class="features-container">
+                <h2>What We Offer</h2>
+                <div class="feature-card" data-aos="fade-up">
+                    <div class="feature-icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Fun Minigames</h3>
+                        <p>Three engaging minigames designed to distract your mind and uplift your mood when you need a break.</p>
+                    </div>
+                </div>
+
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>AI Chatbot</h3>
+                        <p>A friendly AI companion powered by machine learning that's always ready to listen and chat with you.</p>
+                    </div>
+                </div>
+
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon">
+                        <i class="fas fa-quote-right"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Motivational Quotes</h3>
+                        <p>A curated collection of inspiring quotes to keep you motivated and positive throughout your day.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonials">
+                <h2>What Students Say</h2>
+                <div class="testimonial-slider">
+                    <div class="testimonial active">
+                        <p>"MoodMate helped me manage my stress during finals week. The games are a perfect quick break!"</p>
+                        <div class="testimonial-author">
+                            <img src="/placeholder.svg?height=50&width=50" alt="Student">
+                            <span>Alex, Computer Science</span>
+                        </div>
+                    </div>
+                    <div class="testimonial">
+                        <p>"The motivational quotes feature gives me a daily boost. I check it every morning before classes."</p>
+                        <div class="testimonial-author">
+                            <img src="/placeholder.svg?height=50&width=50" alt="Student">
+                            <span>Jamie, Psychology</span>
+                        </div>
+                    </div>
+                    <div class="testimonial">
+                        <p>"Having the AI chatbot to talk to when I'm feeling down has been surprisingly helpful. It's like a friend that's always available."</p>
+                        <div class="testimonial-author">
+                            <img src="/placeholder.svg?height=50&width=50" alt="Student">
+                            <span>Taylor, Business</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-controls">
+                    <button id="prev-testimonial"><i class="fas fa-chevron-left"></i></button>
+                    <div class="testimonial-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                    <button id="next-testimonial"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+
+            <div class="cta-container">
+                <h2>Ready to improve your mental well-being?</h2>
+                <p>Take the first step towards better mental health with MoodMate!</p>
+                <div class="cta-buttons">
+                    <a href="index2.html" class="cta-button primary">Get Started</a>
+                    <a href="minigames.html" class="cta-button secondary">Try a Game</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="logo.svg" alt="MoodMate Logo">
+                <span>MoodMate</span>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="index2.html">Dashboard</a>
+                <a href="minigames.html">Games</a>
+                <a href="quotes.html">Quotes</a>
+                <a href="addskills.html">Skills</a>
+            </div>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 MoodMate. All rights reserved.</p>
+            <p>Made with <i class="fas fa-heart"></i> for student mental health</p>
+        </div>
+    </footer>
+
+    <script src="scriptlearn.js"></script>
+</body>
+</html>

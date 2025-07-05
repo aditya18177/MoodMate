@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Skills</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+            font-family: 'Arial', sans-serif;
+            color: white;
+        }
+        .container {
+            max-width: 500px;
+            margin: auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            text-align: center;
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 8px;
+        }
+        input {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+        button {
+            background: #ffeb3b;
+            color: black;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #fbc02d;
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen">
+    <div class="container">
+        <h1 class="text-2xl font-bold">Enter Your Skills</h1>
+        <input type="text" id="skillInput" placeholder="Enter a skill...">
+        <button onclick="addSkill()">Add Skill</button>
+        <ul id="skillList" class="mt-4 text-left"></ul>
+    </div>
+
+    <script>
+        function addSkill() {
+            const skillInput = document.getElementById('skillInput');
+            const skillList = document.getElementById('skillList');
+            if (skillInput.value.trim() !== '') {
+                const li = document.createElement('li');
+                li.textContent = skillInput.value;
+                li.classList.add('p-2', 'bg-white', 'bg-opacity-20', 'rounded', 'mt-2');
+                skillList.appendChild(li);
+                skillInput.value = '';
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="300" viewBox="0 0 500 300" fill="none">
+  <rect width="500" height="300" rx="20" fill="white"/>
+  
+  <!-- Header -->
+  <rect width="500" height="60" rx="20" fill="#4A90E2" opacity="0.1"/>
+  <text x="30" y="38" font-family="Arial" font-size="20" font-weight="bold" fill="#4A90E2">Mood Tracker</text>
+  
+  <!-- Calendar View -->
+  <rect x="30" y="80" width="440" height="200" rx="10" fill="#F5F7FA"/>
+  
+  <!-- Days of Week -->
+  <text x="70" y="110" font-family="Arial" font-size="12" fill="#666666">Mon</text>
+  <text x="130" y="110" font-family="Arial" font-size="12" fill="#666666">Tue</text>
+  <text x="190" y="110" font-family="Arial" font-size="12" fill="#666666">Wed</text>
+  <text x="250" y="110" font-family="Arial" font-size="12" fill="#666666">Thu</text>
+  <text x="310" y="110" font-family="Arial" font-size="12" fill="#666666">Fri</text>
+  <text x="370" y="110" font-family="Arial" font-size="12" fill="#666666">Sat</text>
+  <text x="430" y="110" font-family="Arial" font-size="12" fill="#666666">Sun</text>
+  
+  <!-- Week 1 -->
+  <circle cx="70" cy="150" r="15" fill="#4A90E2"/>
+  <circle cx="130" cy="150" r="15" fill="#6FCF97"/>
+  <circle cx="190" cy="150" r="15" fill="#6FCF97"/>
+  <circle cx="250" cy="150" r="15" fill="#F2C94C"/>
+  <circle cx="310" cy="150" r="15" fill="#F2C94C"/>
+  <circle cx="370" cy="150" r="15" fill="#4A90E2"/>
+  <circle cx="430" cy="150" r="15" fill="#4A90E2"/>
+  
+  <!-- Week 2 -->
+  <circle cx="70" cy="200" r="15" fill="#F2C94C"/>
+  <circle cx="130" cy="200" r="15" fill="#EB5757"/>
+  <circle cx="190" cy="200" r="15" fill="#EB5757"/>
+  <circle cx="250" cy="200" r="15" fill="#F2C94C"/>
+  <circle cx="310" cy="200" r="15" fill="#6FCF97"/>
+  <circle cx="370" cy="200" r="15" fill="#4A90E2"/>
+  <circle cx="430" cy="200" r="15" fill="#4A90E2"/>
+  
+  <!-- Week 3 -->
+  <circle cx="70" cy="250" r="15" fill="#6FCF97"/>
+  <circle cx="130" cy="250" r="15" fill="#6FCF97"/>
+  <circle cx="190" cy="250" r="15" fill="#4A90E2"/>
+  <circle cx="250" cy="250" r="15" fill="#4A90E2"/>
+  <circle cx="310" cy="250" r="15" fill="#F2C94C"/>
+  <circle cx="370" cy="250" r="15" fill="#F2C94C"/>
+  <circle cx="430" cy="250" r="15" fill="#6FCF97"/>
+</svg>

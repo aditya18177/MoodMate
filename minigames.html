@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Minigames</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="stylesgames.css">
+</head>
+<body>
+    <div class="particles-container">
+        <div id="particles"></div>
+    </div>
+    
+    <div class="container">
+        <header>
+            <h1 class="title">AI Minigames</h1>
+            <p class="subtitle">Choose a game to play</p>
+        </header>
+        
+        <div class="game-buttons">
+            <button id="guess-btn" class="game-button">
+                <span class="game-icon">🔢</span>
+                <span class="game-name">Guess the Number</span>
+            </button>
+            <button id="rps-btn" class="game-button">
+                <span class="game-icon">✂️</span>
+                <span class="game-name">Rock Paper Scissors</span>
+            </button>
+            <button id="ttt-btn" class="game-button">
+                <span class="game-icon">⭕</span>
+                <span class="game-name">Tic-Tac-Toe</span>
+            </button>
+        </div>
+        
+        <div id="game-area" class="game-area hidden">
+            <button id="back-btn" class="back-button">← Back to Games</button>
+            <div id="game-content"></div>
+        </div>
+        
+        <footer>
+            <p>Created with ❤️  <span id="current-year"></span></p>
+        </footer>
+    </div>
+    
+    <script src="./games.js"></script>
+</body>
+</html>

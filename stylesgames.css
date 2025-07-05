@@ -1,0 +1,524 @@
+:root {
+    --primary: #6d28d9;
+    --primary-light: #8b5cf6;
+    --secondary: #10b981;
+    --dark: #111827;
+    --light: #f3f4f6;
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.2);
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+      "Helvetica Neue", sans-serif;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: var(--light);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+  }
+  
+  .particles-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+  }
+  
+  #particles {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 800px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+  
+  header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  .title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(to right, var(--primary-light), var(--secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+  }
+  
+  .subtitle {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 1rem;
+  }
+  
+  .game-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    width: 100%;
+  }
+  
+  .game-button {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 1.5rem;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .game-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+    z-index: -1;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+  }
+  
+  .game-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .game-button:hover::before {
+    opacity: 1;
+  }
+  
+  .game-button:active {
+    transform: translateY(0);
+  }
+  
+  .game-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .game-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+  
+  .game-area {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeIn 0.5s ease;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .back-button {
+    align-self: flex-start;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    margin-bottom: 1.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: white;
+  }
+  
+  .back-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+  
+  #game-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Guess the Number Game */
+  .guess-game {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+  }
+  
+  .guess-input {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    width: 100%;
+    margin: 1rem 0;
+    color: white;
+    font-size: 1.1rem;
+    text-align: center;
+  }
+  
+  .guess-input:focus {
+    outline: none;
+    border-color: var(--primary-light);
+    box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.3);
+  }
+  
+  .guess-button {
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .guess-button:hover {
+    background: var(--primary-light);
+  }
+  
+  .guess-feedback {
+    margin-top: 1.5rem;
+    font-size: 1.1rem;
+    min-height: 1.5rem;
+  }
+  
+  .guess-history {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+    justify-content: center;
+  }
+  
+  .guess-item {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+  }
+  
+  .too-high {
+    background: rgba(239, 68, 68, 0.2);
+    border: 1px solid rgba(239, 68, 68, 0.4);
+  }
+  
+  .too-low {
+    background: rgba(59, 130, 246, 0.2);
+    border: 1px solid rgba(59, 130, 246, 0.4);
+  }
+  
+  .correct {
+    background: rgba(16, 185, 129, 0.2);
+    border: 1px solid rgba(16, 185, 129, 0.4);
+  }
+  
+  /* Rock Paper Scissors Game */
+  .rps-game {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+  }
+  
+  .rps-choices {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0;
+  }
+  
+  .rps-choice {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .rps-choice:hover {
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.2);
+  }
+  
+  .rps-choice:active {
+    transform: scale(0.95);
+  }
+  
+  .rps-result {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+  }
+  
+  .rps-player,
+  .rps-ai {
+    text-align: center;
+    flex: 1;
+  }
+  
+  .rps-selection {
+    font-size: 3rem;
+    margin: 1rem 0;
+    min-height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .rps-vs {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    font-weight: 700;
+    font-size: 1.2rem;
+  }
+  
+  .rps-message {
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    min-height: 1.8rem;
+  }
+  
+  .rps-score {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
+  }
+  
+  .score-item {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+  }
+  
+  /* Tic Tac Toe Game */
+  .ttt-game {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+  }
+  
+  .ttt-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 2rem auto;
+    width: 300px;
+    height: 300px;
+  }
+  
+  .ttt-cell {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .ttt-cell:hover:not(.filled) {
+    background: rgba(255, 255, 255, 0.2);
+  }
+  
+  .ttt-cell.filled {
+    cursor: not-allowed;
+  }
+  
+  .ttt-cell.x {
+    color: #ec4899;
+  }
+  
+  .ttt-cell.o {
+    color: #3b82f6;
+  }
+  
+  .ttt-cell.winning {
+    animation: pulse 1s infinite;
+  }
+  
+  .ttt-status {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    min-height: 1.8rem;
+  }
+  
+  .ttt-reset {
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: 1rem;
+  }
+  
+  .ttt-reset:hover {
+    background: var(--primary-light);
+  }
+  
+  .ttt-score {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.7);
+    }
+    70% {
+      box-shadow: 0 0 0 10px rgba(139, 92, 246, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(139, 92, 246, 0);
+    }
+  }
+  
+  .win-animation {
+    animation: winPulse 0.5s;
+  }
+  
+  @keyframes winPulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  footer {
+    margin-top: 3rem;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.9rem;
+  }
+  
+  /* Responsive */
+  @media (max-width: 640px) {
+    .title {
+      font-size: 2.5rem;
+    }
+  
+    .game-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .game-button {
+      width: 100%;
+      max-width: 250px;
+    }
+  
+    .rps-choices {
+      gap: 0.5rem;
+    }
+  
+    .rps-choice {
+      width: 60px;
+      height: 60px;
+      font-size: 1.5rem;
+    }
+  
+    .ttt-board {
+      width: 250px;
+      height: 250px;
+    }
+  }
+  

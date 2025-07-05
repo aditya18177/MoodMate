@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="300" viewBox="0 0 500 300" fill="none">
+  <rect width="500" height="300" rx="20" fill="white"/>
+  
+  <!-- Header -->
+  <rect width="500" height="60" rx="20" fill="#6FCF97" opacity="0.1"/>
+  <text x="30" y="38" font-family="Arial" font-size="20" font-weight="bold" fill="#6FCF97">Personalized Support</text>
+  
+  <!-- Content Area -->
+  <rect x="30" y="80" width="440" height="200" rx="10" fill="#F5F7FA"/>
+  
+  <!-- Recommendations -->
+  <text x="50" y="110" font-family="Arial" font-size="16" font-weight="bold" fill="#333333">Your Recommendations</text>
+  
+  <!-- Recommendation 1 -->
+  <rect x="50" y="130" width="400" height="40" rx="5" fill="white"/>
+  <circle cx="70" cy="150" r="10" fill="#4A90E2"/>
+  <text x="90" y="155" font-family="Arial" font-size="14" fill="#333333">5-minute breathing exercise</text>
+  
+  <!-- Recommendation 2 -->
+  <rect x="50" y="180" width="400" height="40" rx="5" fill="white"/>
+  <circle cx="70" cy="200" r="10" fill="#6FCF97"/>
+  <text x="90" y="205" font-family="Arial" font-size="14" fill="#333333">Journal your thoughts before bed</text>
+  
+  <!-- Recommendation 3 -->
+  <rect x="50" y="230" width="400" height="40" rx="5" fill="white"/>
+  <circle cx="70" cy="250" r="10" fill="#F2C94C"/>
+  <text x="90" y="255" font-family="Arial" font-size="14" fill="#333333">Connect with campus counseling services</text>
+</svg>
